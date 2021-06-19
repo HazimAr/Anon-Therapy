@@ -3,7 +3,7 @@ const GA_TRACKING_ID = "";
 const IS_PRODUCTION = process.env.NODE_ENV === "production";
 
 const DB_URL = IS_PRODUCTION
-	? "https://b74e5fe69b3e.ngrok.io"
+	? "https://therapy-ses.herokuapp.com"
 	: "http://localhost:6969";
 
 const META = {
