@@ -46,7 +46,7 @@ export default function Home(): JSX.Element {
 			setRoom(roomP);
 		}
 		socket.on("message", (msg, role) => {
-			displayMessage(msg, role ? "Therapist" : "Patient");
+			displayMessage(msg, role ? "Patient" : "Therapist");
 		});
 	}, []);
 
