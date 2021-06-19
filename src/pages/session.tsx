@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable no-void */
 import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
@@ -44,10 +46,10 @@ export default function Play(): JSX.Element {
 				"join-room",
 				room,
 				(isStarted: boolean, serverRole: boolean, isFull: boolean) => {
-					//@ts-ignore
+					// @ts-ignore
 					setFull(isFull);
 					setRole(serverRole);
-					//@ts-ignore
+					// @ts-ignore
 					setStarted(isStarted);
 				}
 			);
@@ -56,7 +58,7 @@ export default function Play(): JSX.Element {
 
 	useEffect(() => {
 		if (started === false && room && full === false) {
-			axios.post(
+			void axios.post(
 				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
 				{
 					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
@@ -80,7 +82,7 @@ export default function Play(): JSX.Element {
 						</Heading>
 						<Button
 							onClick={() => {
-								router.push(`/`);
+								void router.push(`/`);
 							}}
 						>
 							Request Session
