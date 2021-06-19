@@ -47,7 +47,7 @@ export default function Play(): JSX.Element {
 	}, []);
 
 	useEffect(() => {
-		if (started) {
+		if (!started) {
 			axios.post(
 				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
 				{
