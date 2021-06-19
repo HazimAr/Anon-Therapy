@@ -23,7 +23,6 @@ export default function Play(): JSX.Element {
 				"join-room",
 				room,
 				(isStarted: boolean, serverRole: boolean) => {
-					console.log(serverRole);
 					setRole(serverRole);
 					setStarted(isStarted);
 				}
@@ -50,7 +49,7 @@ export default function Play(): JSX.Element {
 			<Box>
 				{started ? (
 					<Box>
-						<Chat socket={socket} rol={role} room={room} />
+						<Chat socket={socket} role={role} room={room} />
 					</Box>
 				) : (
 					<Box>

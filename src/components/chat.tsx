@@ -31,17 +31,20 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 			from: from,
 			message: displayMessage,
 		});
-		console.log(tempMessages);
 
 		//@ts-ignore
 		setMessages(tempMessages);
 	}
 
+	useEffect(() => {}, []);
+
 	useEffect(() => {
+		socket.removeListener("message");
+
 		socket.on("message", (msg: string) => {
 			displayMessage(msg, role ? "Patient" : "Therapist");
 		});
-	}, []);
+	}, [messages]);
 
 	return (
 		<Center h="100vh">
