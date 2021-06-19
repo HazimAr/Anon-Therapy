@@ -7,7 +7,7 @@ export default function Index(): JSX.Element {
 		<Center h="100vh">
 			<Button
 				onClick={() => {
-					router.push(`/play?room=${uuid()}`);
+					router.push(`/session?room=${uuid()}`);
 				}}
 			>
 				Request Session
