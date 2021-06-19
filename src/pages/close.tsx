@@ -1,3 +1,4 @@
+/* eslint-disable no-void */
 import { Button, Center, Box, Heading } from "@chakra-ui/react";
 import router from "next/router";
 
@@ -8,7 +9,7 @@ export default function Index(): JSX.Element {
 				<Heading>The other person has left the room</Heading>
 				<Button
 					onClick={() => {
-						router.push(`/`);
+						void router.push(`/`);
 					}}
 				>
 					Go Home
