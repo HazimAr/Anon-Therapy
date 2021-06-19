@@ -1,4 +1,4 @@
-import { Box, Center, Heading } from "@chakra-ui/react";
+import { Box, Center, Heading, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import { DB_URL } from "config";
@@ -56,6 +56,10 @@ export default function Play(): JSX.Element {
 						<Heading size="md">
 							Please wait for a therapist to connect to the room
 						</Heading>
+						<Text>
+							For you guys who are testing just send the url to
+							another person
+						</Text>
 					</Box>
 				)}
 			</Box>
