@@ -7,7 +7,6 @@ import Chat from "@components/chat";
 import axios from "axios";
 import { IS_PRODUCTION } from "config";
 import router from "next/router";
-import { v4 as uuid } from "uuid";
 
 const socket = io(DB_URL);
 
@@ -19,6 +18,7 @@ export default function Play(): JSX.Element {
 
 	useEffect(() => {
 		socket.on("start", () => {
+			//@ts-ignore
 			setStarted(true);
 		});
 
@@ -44,8 +44,10 @@ export default function Play(): JSX.Element {
 				"join-room",
 				room,
 				(isStarted: boolean, serverRole: boolean, isFull: boolean) => {
+					//@ts-ignore
 					setFull(isFull);
 					setRole(serverRole);
+					//@ts-ignore
 					setStarted(isStarted);
 				}
 			);
