@@ -1,6 +1,6 @@
 import Document, { Html, Head, Main, NextScript } from "next/document";
 import { ServerStyleSheet } from "styled-components";
-
+import { ColorModeScript } from "@chakra-ui/react";
 import { GA_TRACKING_ID, META } from "../config.ts";
 
 export default class MyDocument extends Document {
@@ -75,6 +75,7 @@ export default class MyDocument extends Document {
 					/>
 				</Head>
 				<body>
+					<ColorModeScript initialColorMode="dark" />
 					<Main />
 					<NextScript />
 				</body>
