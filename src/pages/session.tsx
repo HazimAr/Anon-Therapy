@@ -1,14 +1,13 @@
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable no-void */
 import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
+import Chat from "@components/chat";
+import { getParameterByName } from "@lib/cookie";
+import axios from "axios";
+import { DB_URL, IS_PRODUCTION } from "config";
+import router from "next/router";
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
-import { DB_URL } from "config";
-import { getParameterByName } from "@lib/cookie";
-import Chat from "@components/chat";
-import axios from "axios";
-import { IS_PRODUCTION } from "config";
-import router from "next/router";
 
 const socket = io(DB_URL);
 
@@ -20,12 +19,12 @@ export default function Play(): JSX.Element {
 
 	useEffect(() => {
 		socket.on("start", () => {
-			//@ts-ignore
+			// @ts-ignore
 			setStarted(true);
 		});
 
 		socket.on("leave", () => {
-			router.push(`/close`);
+			void router.push(`/close`);
 			// setStarted(false);
 			// socket.emit(
 			// 	"join-room",
