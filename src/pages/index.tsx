@@ -5,17 +5,19 @@ import { v4 as uuid } from "uuid";
 
 export default function Index(): JSX.Element {
 	return (
-		<Flex justify="center">
-			<Box>
-				<Image src="/undraw/doctors.svg" w="500px" />
-				<Button
-					onClick={() => {
-						void router.push(`/session?room=${uuid()}`);
-					}}
-				>
-					Request Session
-				</Button>
-			</Box>
-		</Flex>
+		<Box w="100vw" h="100vh">
+			<Flex justify="center">
+				<Box>
+					<Image src="/undraw/doctors.svg" w="500px" />
+					<Button
+						onClick={() => {
+							void router.push(`/session?room=${uuid()}`);
+						}}
+					>
+						Request Session
+					</Button>
+				</Box>
+			</Flex>
+		</Box>
 	);
 }
