@@ -8,32 +8,13 @@ export default function Index(): JSX.Element {
 
 	return (
 		<Center h="100vh">
-			<Box>
-				<Input
-					onChange={(e: any) => {
-						const room = e.target.value;
-						setRoom(room);
-					}}
-					placeholder="Room"
-				/>
-
-				<Flex justify="space-between">
-					<Button
-						onClick={() => {
-							router.push(`/play?room=${room}`);
-						}}
-					>
-						Join
-					</Button>
-					<Button
-						onClick={() => {
-							router.push(`/play?room=${uuid()}`);
-						}}
-					>
-						Create Private Match
-					</Button>
-				</Flex>
-			</Box>
+			<Button
+				onClick={() => {
+					router.push(`/play?room=${uuid()}`);
+				}}
+			>
+				Request Session
+			</Button>
 		</Center>
 	);
 }
