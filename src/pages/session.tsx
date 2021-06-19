@@ -93,6 +93,7 @@ export default function Play(): JSX.Element {
 						<Heading size="md">
 							Please wait for a therapist to connect to the room
 						</Heading>
+						<Heading>Average wait time: 5 min</Heading>
 						<Text>
 							For you guys who are testing just send the url to
 							another person
