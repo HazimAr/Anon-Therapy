@@ -15,6 +15,8 @@ export default function Home(): JSX.Element {
 				"Thank you for creating a session, please wait for one of our therapists to connect to the room",
 		},
 	]);
+	const [role, setRole] = useState(false);
+	const [room, setRoom] = useState("");
 
 	type messageType = {
 		from: string;
@@ -38,9 +40,11 @@ export default function Home(): JSX.Element {
 	}
 
 	useEffect(() => {
-		const room = getParameterByName("room");
-		const role = getParameterByName("role");
-		if (room) socket.emit("join-room", room, role ? true : false);
+		const roomP = getParameterByName("room");
+		if (roomP) {
+			socket.emit("join-room", roomP);
+			setRoom(roomP);
+		}
 		socket.on("message", (msg, role) => {
 			displayMessage(msg, role ? "Therapist" : "Patient");
 		});
@@ -64,7 +68,7 @@ export default function Home(): JSX.Element {
 						onSubmit={(e) => {
 							if (!message) return;
 							e.preventDefault();
-
+							socket.emit("message", message, role);
 							displayMessage(message, "You");
 							setMessage("");
 						}}
