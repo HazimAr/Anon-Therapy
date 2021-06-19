@@ -1,4 +1,4 @@
-import { Box, Center, Heading, Text } from "@chakra-ui/react";
+import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 import { io } from "socket.io-client";
 import { DB_URL } from "config";
@@ -6,13 +6,16 @@ import { getParameterByName } from "@lib/cookie";
 import Chat from "@components/chat";
 import axios from "axios";
 import { IS_PRODUCTION } from "config";
+import router from "next/router";
+import { v4 as uuid } from "uuid";
 
 const socket = io(DB_URL);
 
 export default function Play(): JSX.Element {
 	const [room, setRoom] = useState("");
-	const [started, setStarted] = useState(false);
+	const [started, setStarted] = useState();
 	const [role, setRole] = useState(false);
+	const [full, setFull] = useState();
 
 	useEffect(() => {
 		socket.on("start", () => {
@@ -20,15 +23,17 @@ export default function Play(): JSX.Element {
 		});
 
 		socket.on("leave", () => {
-			setStarted(false);
-			socket.emit(
-				"join-room",
-				room,
-				(isStarted: boolean, serverRole: boolean) => {
-					setRole(serverRole);
-					setStarted(isStarted);
-				}
-			);
+			router.push(`/close`);
+			// setStarted(false);
+			// socket.emit(
+			// 	"join-room",
+			// 	room,
+			// 	(isStarted: boolean, serverRole: boolean, isFull: boolean) => {
+			// 		setFull(isFull);
+			// 		setRole(serverRole);
+			// 		setStarted(isStarted);
+			// 	}
+			// );
 		});
 
 		const room = getParameterByName("room");
@@ -38,7 +43,8 @@ export default function Play(): JSX.Element {
 			socket.emit(
 				"join-room",
 				room,
-				(isStarted: boolean, serverRole: boolean) => {
+				(isStarted: boolean, serverRole: boolean, isFull: boolean) => {
+					setFull(isFull);
 					setRole(serverRole);
 					setStarted(isStarted);
 				}
@@ -47,7 +53,7 @@ export default function Play(): JSX.Element {
 	}, []);
 
 	useEffect(() => {
-		if (!started && room) {
+		if (started === false && room && full === false) {
 			axios.post(
 				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
 				{
@@ -59,12 +65,26 @@ export default function Play(): JSX.Element {
 				}
 			);
 		}
-	}, [started, room]);
+	}, [started, room, full]);
 
 	return (
 		<Center h="100vh">
 			<Box>
-				{started ? (
+				{full ? (
+					<Box>
+						<Heading size="md">
+							It looks like this room is full if you would like to
+							make another session please click below
+						</Heading>
+						<Button
+							onClick={() => {
+								router.push(`/`);
+							}}
+						>
+							Request Session
+						</Button>
+					</Box>
+				) : started ? (
 					<Box>
 						<Chat socket={socket} role={role} room={room} />
 					</Box>
