@@ -26,7 +26,7 @@ export default function Index(): JSX.Element {
 					</Flex>
 				</Box>
 			</Flex>
-			<Divider bg="brand.800" />
+			<Divider bg="brand.600" />
 
 			{/* <Flex justify="center">
 				<Box>

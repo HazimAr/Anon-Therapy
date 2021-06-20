@@ -5,14 +5,12 @@ import router from "next/router";
 import { v4 as uuid } from "uuid";
 
 export default function Index(): JSX.Element {
-
-
 	return (
 		<Flex justify="center">
 			<Flex
 				justify="center"
 				align="center"
-				flexWrap="wrap"
+				flexWrap="wrap-reverse"
 				maxW="1200px"
 				mx="25px"
 			>
@@ -30,6 +28,7 @@ export default function Index(): JSX.Element {
 						onClick={() => {
 							void router.push(`/session?room=${uuid()}`);
 						}}
+						bg="brand.500"
 					>
 						Request Session
 					</Button>
