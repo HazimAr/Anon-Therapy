@@ -11,7 +11,7 @@ export default function Body(): JSX.Element {
 				justify="space-evenly"
 				mt="20px"
 				flexWrap="wrap"
-				maxW="1000px"
+				maxW="2000px"
 				w="100%"
 			>
 				<Box maxW="362px" mx="25px">
