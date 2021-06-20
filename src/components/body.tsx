@@ -11,7 +11,7 @@ export default function Body(): JSX.Element {
 				maxW="1000px"
 				w="100%"
 			>
-				<Box maxW="362px">
+				<Box maxW="362px" mx="25px">
 					<Heading size="md" mb="10px">
 						ABOUT US
 					</Heading>
