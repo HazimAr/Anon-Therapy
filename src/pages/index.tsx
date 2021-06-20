@@ -1,6 +1,7 @@
 import { Box, Flex, Text, Link, Divider } from "@chakra-ui/react";
 import Intro from "@components/intro";
 import Body from "@components/body";
+import { v4 as uuid } from "uuid";
 
 export default function Index(): JSX.Element {
 	return (
@@ -25,7 +26,11 @@ export default function Index(): JSX.Element {
 						<Link href="https://discord.gg/pe8xVbyg6e">
 							CONTACT US
 						</Link>
-						<Link>REQUEST SESSION</Link>
+						<Link
+							href={`/session?room=${uuid()}`}
+						>
+							REQUEST SESSION
+						</Link>
 					</Flex>
 				</Box>
 			</Flex>

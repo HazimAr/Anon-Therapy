@@ -4,6 +4,7 @@ import { Box, Flex, Text, Button, Heading } from "@chakra-ui/react";
 import router from "next/router";
 import { v4 as uuid } from "uuid";
 
+
 export default function Body(): JSX.Element {
 	return (
 		<Flex justify="center">

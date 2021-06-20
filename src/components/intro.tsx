@@ -23,15 +23,6 @@ export default function Index(): JSX.Element {
 							adipisci doloribus at debitis quam dolorem tempora.
 						</Text>
 					</Box>
-					<Button
-						mt="20px"
-						onClick={() => {
-							void router.push(`/session?room=${uuid()}`);
-						}}
-						bg="brand.500"
-					>
-						Request Session
-					</Button>
 				</Box>
 				<Box my="20px">
 					<Image src="/undraw/doctors.svg" w="500px" />
