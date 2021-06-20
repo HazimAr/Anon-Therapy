@@ -60,7 +60,7 @@ export default function Play(): JSX.Element {
 	useEffect(() => {
 		if (started === false && room && full === false) {
 			void axios.post(
-				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
+				"https://discord.com/api/webhooks/856105965500891136/MjqIwfQThqPz6u8c6dCU_DtklVgN4Vf6xytoKKItQvhgCSXJvQm3LTXDSWuPcqcFrGc_",
 				{
 					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
 						IS_PRODUCTION
