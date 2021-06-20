@@ -1,8 +1,6 @@
 /* eslint-disable import/no-default-export */
 /* eslint-disable no-void */
-import { Button, Box, Flex, Image, Heading, Text } from "@chakra-ui/react";
-import router from "next/router";
-import { v4 as uuid } from "uuid";
+import { Box, Flex, Image, Heading, Text } from "@chakra-ui/react";
 
 export default function Index(): JSX.Element {
 	return (
