@@ -56,7 +56,13 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 	return (
 		<Flex h="100vh" align="flex-end">
 			<Box maxW="2000px" w="100%" mx="25px">
-				<Box textAlign="left">
+				<Flex
+					textAlign="left"
+					h="80vh"
+					flexDir="column"
+					justify="flex-end"
+					overflowY="auto"
+				>
 					{messages.map((message: messageType, index: number) => {
 						return (
 							<Text key={index} my="10px" fontSize="xl">
@@ -65,7 +71,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 							</Text>
 						);
 					})}
-				</Box>
+				</Flex>
 				<Flex my="20px">
 					<form
 						onSubmit={(e) => {
