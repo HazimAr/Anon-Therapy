@@ -86,6 +86,8 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 					>
 						<FormControl id="first-name" isRequired>
 							<Input
+								color="text.900"
+								borderColor="black"
 								w="100%"
 								placeholder="Message"
 								value={message}

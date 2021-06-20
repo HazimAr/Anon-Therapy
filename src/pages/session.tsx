@@ -57,31 +57,32 @@ export default function Play(): JSX.Element {
 		void router.push(`/`);
 	}, []);
 
-	// useEffect(() => {
-	// 	if (started === false && room && full === false) {
-	// 		void axios.post(
-	// 			"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
-	// 			{
-	// 				content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
-	// 					IS_PRODUCTION
-	// 						? `https://anon-therapy.vercel.app/session?room=${room}`
-	// 						: `http://localhost:3000/session?room=${room}`
-	// 				}`,
-	// 			}
-	// 		);
-	// 	}
-	// }, [started, room, full]);
+	useEffect(() => {
+		if (started === false && room && full === false) {
+			void axios.post(
+				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
+				{
+					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
+						IS_PRODUCTION
+							? `https://anon-therapy.vercel.app/session?room=${room}`
+							: `http://localhost:3000/session?room=${room}`
+					}`,
+				}
+			);
+		}
+	}, [started, room, full]);
 
 	return (
 		<Center h="100vh">
 			<Box>
 				{full ? (
-					<Box>
+					<Box textAlign="center">
 						<Heading size="md">
 							It looks like this room is full if you would like to
 							make another session please click below
 						</Heading>
 						<Button
+							bg="brand.500"
 							onClick={() => {
 								void router.push(`/`);
 							}}
@@ -94,7 +95,7 @@ export default function Play(): JSX.Element {
 						<Chat socket={socket} role={role} room={room} />
 					</Box>
 				) : (
-					<Box>
+					<Box textAlign="center">
 						<Heading size="md">
 							Please wait for a therapist to connect to the room
 						</Heading>
