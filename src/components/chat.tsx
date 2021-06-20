@@ -54,20 +54,14 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 	}, [messages]);
 
 	return (
-		<Flex h="100vh">
-			<Flex
-				maxW="1200px"
-				w="100%"
-				mx="25px"
-				flexDir="column"
-				justify="space-between"
-			>
+		<Flex h="100vh" align="flex-end">
+			<Box maxW="2000px" w="100%" mx="25px">
 				<Box textAlign="left">
 					{messages.map((message: messageType, index: number) => {
 						return (
-							<Text key={index} my="10px">
+							<Text key={index} my="10px" fontSize="xl">
 								{message.from}:
-								<Text fontSize="sm"> {message.message}</Text>
+								<Text fontSize="lg"> {message.message}</Text>
 							</Text>
 						);
 					})}
@@ -90,6 +84,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 								borderColor="black"
 								w="100%"
 								placeholder="Message"
+								px="50px"
 								value={message}
 								onChange={(event: any) => {
 									const temp = event.target.value;
@@ -99,7 +94,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 						</FormControl>
 					</form>
 				</Flex>
-			</Flex>
+			</Box>
 		</Flex>
 	);
 }
