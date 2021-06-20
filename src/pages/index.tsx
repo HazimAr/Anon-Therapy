@@ -1,5 +1,6 @@
 import { Box, Flex, Text, Link, Divider } from "@chakra-ui/react";
 import Intro from "@components/intro";
+import Body from "@components/body";
 
 export default function Index(): JSX.Element {
 	return (
@@ -41,6 +42,7 @@ export default function Index(): JSX.Element {
 				</Box>
 			</Flex> */}
 			<Intro />
+			<Body />
 		</Box>
 	);
 	// return <Intro />;
