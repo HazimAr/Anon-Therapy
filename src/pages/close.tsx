@@ -11,7 +11,7 @@ export default function Index(): JSX.Element {
 					onClick={() => {
 						void router.push(`/`);
 					}}
-					bg="brand.500"
+					bg="#49c3f8"
 				>
 					Go Home
 				</Button>

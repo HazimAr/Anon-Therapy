@@ -82,7 +82,7 @@ export default function Play(): JSX.Element {
 							make another session please click below
 						</Heading>
 						<Button
-							bg="brand.500"
+							bg="#49c3f8"
 							onClick={() => {
 								void router.push(`/`);
 							}}
