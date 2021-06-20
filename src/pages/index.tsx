@@ -1,4 +1,4 @@
-import { Box, Flex, Text, Divider } from "@chakra-ui/react";
+import { Box, Flex, Text, Link, Divider } from "@chakra-ui/react";
 import Intro from "@components/intro";
 
 export default function Index(): JSX.Element {
@@ -19,11 +19,10 @@ export default function Index(): JSX.Element {
 					>
 						—Free Anonymous Online Therapy—
 					</Text>
-					<Flex justify="space-between" mt="15px" mx="50px">
-						<Text>HOME</Text>
-						<Text>ABOUT US</Text>
-						<Text>FAQ</Text>
-						<Text>CONTACT US</Text>
+					<Flex justify="center" mt="15px" mx="50px">
+						<Link>HOME</Link>
+						<Link mx="300px">FAQ</Link>
+						<Link>CONTACT US</Link>
 					</Flex>
 				</Box>
 			</Flex>
