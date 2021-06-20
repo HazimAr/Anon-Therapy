@@ -26,9 +26,7 @@ export default function Index(): JSX.Element {
 						<Link href="https://discord.gg/pe8xVbyg6e">
 							CONTACT US
 						</Link>
-						<Link
-							href={`/session?room=${uuid()}`}
-						>
+						<Link href={`/session?room=${uuid()}`}>
 							REQUEST SESSION
 						</Link>
 					</Flex>
