@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 
 export default function Body(): JSX.Element {
 	return (
-		<Flex justify="center">
+		<Flex justify="center" pb="250px">
 			<Flex
 				justify="space-evenly"
 				mt="20px"

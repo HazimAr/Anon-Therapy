@@ -6,6 +6,7 @@ body {
 		Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 	color: rgba(255, 255, 255, 0.897);
 	background-color: #aff4f6;
+	overflow-x: hidden;
 }
 
 a {
@@ -19,4 +20,17 @@ ul {
 
 input::placeholder {
 	color: #072d75;
+}
+
+body::-webkit-scrollbar {
+	width: 0.7em;
+}
+
+body::-webkit-scrollbar-track {
+	background-color: transparent;
+}
+
+body::-webkit-scrollbar-thumb {
+	background-color: #072D75;
+	border-radius: 60px;
 }
