@@ -16,9 +16,9 @@ export default function Index(): JSX.Element {
 					<Box>
 						<Heading>Anonymous Therapy Done Right</Heading>
 						<Text my="10px" color="#265cc0">
-							Lorem ipsum dolor, sit amet consectetur adipisicing
-							elit. Magni qui veniam possimus quod, laudantium,
-							adipisci doloribus at debitis quam dolorem tempora.
+							Comfort. Privacy. Providing optional assistance or
+							to only listen. To us you will never be a stranger,
+							to us you are our friend.
 						</Text>
 					</Box>
 				</Box>
