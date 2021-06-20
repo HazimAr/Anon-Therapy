@@ -3,7 +3,7 @@
 import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
 import Chat from "@components/chat";
 import { getParameterByName } from "@lib/cookie";
-// import axios from "axios";
+import axios from "axios";
 import { DB_URL, IS_PRODUCTION } from "config";
 import router from "next/router";
 import { useState, useEffect } from "react";
@@ -55,20 +55,20 @@ export default function Play(): JSX.Element {
 		}
 	}, []);
 
-	// useEffect(() => {
-	// 	if (started === false && room && full === false) {
-	// 		void axios.post(
-	// 			"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
-	// 			{
-	// 				content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
-	// 					IS_PRODUCTION
-	// 						? `https://anon-therapy.vercel.app/session?room=${room}`
-	// 						: `http://localhost:3000/session?room=${room}`
-	// 				}`,
-	// 			}
-	// 		);
-	// 	}
-	// }, [started, room, full]);
+	useEffect(() => {
+		if (started === false && room && full === false) {
+			void axios.post(
+				"https://discord.com/api/webhooks/855762656644169728/vjm0UGACLsGlZ4p31_MiYAapuxHVIbKcOzvy7ozode5F7YPz4hCs7w-gamrDzN9crYuO",
+				{
+					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
+						IS_PRODUCTION
+							? `https://anon-therapy.vercel.app/session?room=${room}`
+							: `http://localhost:3000/session?room=${room}`
+					}`,
+				}
+			);
+		}
+	}, [started, room, full]);
 
 	return (
 		<Center h="100vh">
