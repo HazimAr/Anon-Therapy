@@ -48,13 +48,11 @@ const theme = extendTheme({
 			},
 			body: {
 				fontFamily: "body",
-				color: "white",
-				bg: "secondary.900",
+				color: "text.1000",
+				bg: "brand.100",
 				lineHeight: "base",
 			},
-			a: {
-				color: "white",
-			},
+		
 		}),
 	},
 });

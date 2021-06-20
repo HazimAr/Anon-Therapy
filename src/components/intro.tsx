@@ -5,6 +5,8 @@ import router from "next/router";
 import { v4 as uuid } from "uuid";
 
 export default function Index(): JSX.Element {
+
+
 	return (
 		<Flex justify="center">
 			<Flex
@@ -17,7 +19,7 @@ export default function Index(): JSX.Element {
 				<Box maxW="450px" textAlign="left" my="20px">
 					<Box>
 						<Heading>Anonymous Therapy Done Right</Heading>
-						<Text my="10px" color="text.400">
+						<Text my="10px" color="text.800">
 							Lorem ipsum dolor, sit amet consectetur adipisicing
 							elit. Magni qui veniam possimus quod, laudantium,
 							adipisci doloribus at debitis quam dolorem tempora.

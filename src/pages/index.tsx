@@ -19,15 +19,14 @@ export default function Index(): JSX.Element {
 					>
 						—Free Anonymous Online Therapy—
 					</Text>
-					<Flex justify="center" mt="15px" mx="50px">
+					<Flex  mt="15px" justify="space-evenly">
 						<Link>HOME</Link>
-						<Link mx="300px">FAQ</Link>
+						<Link>FAQ</Link>
 						<Link>CONTACT US</Link>
 					</Flex>
 				</Box>
 			</Flex>
-			<Divider colorScheme="#6FB7D6" />
-
+			
 			{/* <Flex justify="center">
 				<Box>
 					<Image src="/undraw/bluehealth.svg" w="500px" />
