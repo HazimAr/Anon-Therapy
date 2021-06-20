@@ -19,7 +19,7 @@ export default function Body(): JSX.Element {
 					<Heading size="md" mb="10px" color="black">
 						ABOUT US
 					</Heading>
-					<Text color="brand.800">
+					<Text color="#265cc0">
 						Welcome to Anon-Therapy, an online therapy center made
 						by a group of students! Our purpose is to help those who
 						want to talk but do not want their identity to be known.
