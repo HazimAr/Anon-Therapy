@@ -26,7 +26,7 @@ export default function Body(): JSX.Element {
 						someone so you can speak your thoughts anonymously.
 					</Text>
 				</Box>
-				<Box w="250px" fontSize="25px" mt="40px">
+				<Box w="250px" fontSize="25px" mt="30px">
 					Become a better version of yourself. Request today.
 					<Button
 						mt="20px"
