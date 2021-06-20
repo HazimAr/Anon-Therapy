@@ -5,7 +5,7 @@ export default function Index(): JSX.Element {
 	return (
 		<Box w="100vw" h="100vh">
 			<Flex justify="center">
-				<Box maxW="1200px" w="100%">
+				<Box maxW="1050px" w="100%">
 					<Text
 						fontFamily="Georgia, seriff"
 						fontSize={{ base: "40px", sm: "50px", md: "60px" }}
@@ -19,14 +19,15 @@ export default function Index(): JSX.Element {
 					>
 						—Free Anonymous Online Therapy—
 					</Text>
-					<Flex  mt="15px" justify="space-evenly">
+					<Flex justify="space-between" mt="15px" mx="50px">
 						<Link>HOME</Link>
 						<Link>FAQ</Link>
 						<Link>CONTACT US</Link>
 					</Flex>
 				</Box>
 			</Flex>
-			
+			<Divider bg="brand.800" />
+
 			{/* <Flex justify="center">
 				<Box>
 					<Image src="/undraw/bluehealth.svg" w="500px" />
