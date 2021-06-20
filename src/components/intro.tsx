@@ -14,7 +14,7 @@ export default function Index(): JSX.Element {
 				maxW="1200px"
 				mx="25px"
 			>
-				<Box maxW="450px" textAlign="left" my="20px">
+				<Box maxW="450px" my="20px">
 					<Box>
 						<Heading>Anonymous Therapy Done Right</Heading>
 						<Text my="10px" color="text.800">
