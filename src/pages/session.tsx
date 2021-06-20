@@ -64,7 +64,7 @@ export default function Play(): JSX.Element {
 				{
 					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
 						IS_PRODUCTION
-							? `https://anon-therapy.vercel.app/session?room=${room}`
+							? `https://anontherapy.vercel.app/session?room=${room}`
 							: `http://localhost:3000/session?room=${room}`
 					}`,
 				}
