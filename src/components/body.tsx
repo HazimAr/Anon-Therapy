@@ -33,7 +33,7 @@ export default function Body(): JSX.Element {
 						onClick={() => {
 							void router.push(`/session?room=${uuid()}`);
 						}}
-						bg="brand.500"
+						bg="#49c3f8"
 					>
 						Request Session
 					</Button>
