@@ -15,7 +15,7 @@ export default function Index(): JSX.Element {
 				<Box maxW="450px" my="20px">
 					<Box>
 						<Heading>Anonymous Therapy Done Right</Heading>
-						<Text my="10px" color="text.800">
+						<Text my="10px" color="brand.800">
 							Lorem ipsum dolor, sit amet consectetur adipisicing
 							elit. Magni qui veniam possimus quod, laudantium,
 							adipisci doloribus at debitis quam dolorem tempora.
