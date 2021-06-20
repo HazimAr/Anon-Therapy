@@ -1,6 +1,6 @@
 import { Box, Flex, Text, Link, Divider } from "@chakra-ui/react";
-import Intro from "@components/intro";
 import Body from "@components/body";
+import Intro from "@components/intro";
 import { v4 as uuid } from "uuid";
 
 export default function Index(): JSX.Element {
