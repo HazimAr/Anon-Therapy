@@ -7,11 +7,10 @@ const DB_URL = IS_PRODUCTION
 	: "http://localhost:6969";
 
 const META = {
-	title: "NextJS ChakraUI Template | Hazim Arafa",
+	title: "Anon Therapy | Anonymous Therapy",
 	lang: "en-us",
-	description:
-		"Boilerplate built to scale containing Typescript + NextJS + ChakraUI + Google Analytics + ESLint + Jest + Styled Components + Icons",
-	url: "https://boilerplate.hazimarafa.tech",
+	description: "The secret comfort you never knew you needed.",
+	url: "https://anon-therapy.vercel.app",
 };
 
 export { GA_TRACKING_ID, IS_PRODUCTION, META, DB_URL };
