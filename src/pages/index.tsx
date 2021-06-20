@@ -5,7 +5,7 @@ export default function Index(): JSX.Element {
 	return (
 		<Box w="100vw" h="100vh">
 			<Flex justify="center">
-				<Box maxW="1050px" w="100%">
+				<Box maxW="1050px" w="100%" textAlign="center">
 					<Text
 						fontFamily="Georgia, seriff"
 						fontSize={{ base: "40px", sm: "50px", md: "60px" }}
