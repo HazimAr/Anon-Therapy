@@ -21,7 +21,12 @@ export default function Index(): JSX.Element {
 					>
 						—Free Anonymous Online Therapy—
 					</Text>
-					<Flex justify="space-between" mt="15px" mx="50px" color="black">
+					<Flex
+						justify="space-between"
+						mt="15px"
+						mx="50px"
+						color="black"
+					>
 						<Link href="/">HOME</Link>
 						<Link href="https://discord.gg/pe8xVbyg6e">
 							CONTACT US
