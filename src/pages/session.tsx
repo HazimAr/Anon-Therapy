@@ -52,7 +52,9 @@ export default function Play(): JSX.Element {
 					setStarted(isStarted);
 				}
 			);
+			return;
 		}
+		void router.push(`/`);
 	}, []);
 
 	useEffect(() => {
