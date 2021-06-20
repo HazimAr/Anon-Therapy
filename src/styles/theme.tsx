@@ -49,7 +49,7 @@ const theme = extendTheme({
 			body: {
 				fontFamily: "body",
 				color: "#072D75",
-				bg: "brand.100",
+				bg: "#e8f4fc",
 				lineHeight: "base",
 			},
 		}),

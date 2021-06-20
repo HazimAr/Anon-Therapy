@@ -23,7 +23,7 @@ export default function Index(): JSX.Element {
 					</Box>
 				</Box>
 				<Box my="20px">
-					<Image src="/undraw/doctors.svg" w="500px" />
+					<Image src="/undraw/bluehealth.svg" w="500px" />
 				</Box>
 			</Flex>
 		</Flex>
