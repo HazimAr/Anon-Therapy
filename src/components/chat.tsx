@@ -58,10 +58,10 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 			<Box maxW="2000px" w="100%" mx="25px">
 				<Flex
 					textAlign="left"
-					h="90vh"
+					h="80vh"
 					flexDir="column"
 					justify="flex-end"
-					overflowY="scroll"
+					overflowY="auto"
 				>
 					{messages.map((message: messageType, index: number) => {
 						return (
