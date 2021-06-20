@@ -1,3 +1,9 @@
+/* eslint-disable react/no-array-index-key */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable @typescript-eslint/ban-ts-comment */
+/* eslint-disable @typescript-eslint/explicit-module-boundary-types */
+/* eslint-disable @typescript-eslint/no-explicit-any */
+/* eslint-disable import/no-default-export */
 import { Input, Flex, Box, Center, Text, FormControl } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
@@ -32,11 +38,11 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 			message: displayMessage,
 		});
 
-		//@ts-ignore
+		// @ts-ignore
 		setMessages(tempMessages);
 	}
 
-	useEffect(() => {}, []);
+	// useEffect(() => {}, []);
 
 	useEffect(() => {
 		socket.removeListener("message");
@@ -62,7 +68,9 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 				<Flex mt="25px">
 					<form
 						onSubmit={(e) => {
-							if (!message) return;
+							if (!message) {
+								return;
+							}
 							e.preventDefault();
 							socket.emit("message", message, room);
 							displayMessage(message, "You");
