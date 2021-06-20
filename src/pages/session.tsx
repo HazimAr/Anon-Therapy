@@ -3,7 +3,7 @@
 import { Box, Button, Center, Heading, Text } from "@chakra-ui/react";
 import Chat from "@components/chat";
 import { getParameterByName } from "@lib/cookie";
-import axios from "axios";
+// import axios from "axios";
 import { DB_URL, IS_PRODUCTION } from "config";
 import router from "next/router";
 import { useState, useEffect } from "react";

@@ -1,10 +1,11 @@
+/* eslint-disable @typescript-eslint/ban-types */
 /* eslint-disable react/no-array-index-key */
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable @typescript-eslint/ban-ts-comment */
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Input, Flex, Box, Center, Text, FormControl } from "@chakra-ui/react";
+import { Input, Flex, Box, Text, FormControl } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 export default function Home({ socket, role, room }: any): JSX.Element {
@@ -34,7 +35,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 		});
 
 		tempMessages.push({
-			from: from,
+			from,
 			message: displayMessage,
 		});
 
@@ -53,8 +54,14 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 	}, [messages]);
 
 	return (
-		<Center h="100vh">
-			<Box maxW="700px" w="100%" mx="25px">
+		<Flex h="100vh">
+			<Flex
+				maxW="1200px"
+				w="100%"
+				mx="25px"
+				flexDir="column"
+				justify="space-between"
+			>
 				<Box textAlign="left">
 					{messages.map((message: messageType, index: number) => {
 						return (
@@ -65,7 +72,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 						);
 					})}
 				</Box>
-				<Flex mt="25px">
+				<Flex my="20px">
 					<form
 						onSubmit={(e) => {
 							if (!message) {
@@ -90,7 +97,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 						</FormControl>
 					</form>
 				</Flex>
-			</Box>
-		</Center>
+			</Flex>
+		</Flex>
 	);
 }

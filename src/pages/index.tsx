@@ -1,12 +1,10 @@
-
-import { Button, Box, Flex, Image, Text, Divider } from "@chakra-ui/react";
-import router from "next/router";
-import { v4 as uuid } from "uuid";
+import { Box, Flex, Text, Divider } from "@chakra-ui/react";
+import Intro from "@components/intro";
 
 export default function Index(): JSX.Element {
 	return (
-		<Box w="100vw" h="100vh" bg="#e5f6ff">
-			<Box color="#072D75">
+		<Box w="100vw" h="100vh">
+			<Box>
 				<Text
 					fontFamily="Georgia,seriff"
 					fontSize={{ base: "40px", sm: "50px", md: "60px" }}
@@ -26,7 +24,7 @@ export default function Index(): JSX.Element {
 				</Flex>
 				<Divider colorScheme="#6FB7D6" />
 			</Box>
-			<Flex justify="center">
+			{/* <Flex justify="center">
 				<Box>
 					<Image src="/undraw/bluehealth.svg" w="500px" />
 					<Button
@@ -37,8 +35,9 @@ export default function Index(): JSX.Element {
 						Request Session
 					</Button>
 				</Box>
-			</Flex>
+			</Flex> */}
+			<Intro />
 		</Box>
-
 	);
+	// return <Intro />;
 }
