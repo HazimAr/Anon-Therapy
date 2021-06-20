@@ -5,7 +5,7 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Input, Flex, Box, Text, FormControl } from "@chakra-ui/react";
+import { Input, Flex, Box, Text, FormControl,Image } from "@chakra-ui/react";
 import { useState, useEffect } from "react";
 
 export default function Home({ socket, role, room }: any): JSX.Element {
@@ -54,52 +54,72 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 	}, [messages]);
 
 	return (
-		<Flex h="100vh" align="flex-end">
-			<Box maxW="2000px" w="100%" mx="25px">
-				<Flex
-					textAlign="left"
-					h="80vh"
-					flexDir="column"
-					justify="flex-end"
-					overflowY="auto"
+		<Flex justify="center" h="100vh">
+			<Image src="/logo.png" h="100px" />
+			<Box mx="20px">
+				<Text
+					fontFamily="Georgia, seriff"
+					fontSize={{ base: "40px", sm: "50px", md: "60px" }}
 				>
-					{messages.map((message: messageType, index: number) => {
-						return (
-							<Text key={index} my="10px" fontSize="xl">
-								{message.from}:
-								<Text fontSize="lg"> {message.message}</Text>
-							</Text>
-						);
-					})}
-				</Flex>
-				<Flex my="20px">
-					<form
-						onSubmit={(e) => {
-							if (!message) {
-								return;
-							}
-							e.preventDefault();
-							socket.emit("message", message, room);
-							displayMessage(message, "You");
-							setMessage("");
-						}}
-					>
-						<FormControl id="first-name" isRequired>
-							<Input
-								color="text.900"
-								borderColor="#072d75"
-								w="100%"
-								placeholder="Message"
-								value={message}
-								onChange={(event: any) => {
-									const temp = event.target.value;
-									setMessage(temp);
-								}}
-							/>
-						</FormControl>
-					</form>
-				</Flex>
+					ANON-THERAPY
+				</Text>
+				<Text
+					fontFamily="Georgia, seriff"
+					fontSize={{ sm: "17px", md: "22px" }}
+					mt="-20px"
+					textAlign="center"
+				>
+					—Free Anonymous Online Therapy—
+				</Text>
 			</Box>
+			<Image src="/logo.png" h="100px" />
 		</Flex>
+		// <Flex h="100vh" align="flex-end">
+		// 	<Box maxW="2000px" w="100%" mx="25px">
+		// 		<Flex
+		// 			textAlign="left"
+		// 			h="80vh"
+		// 			flexDir="column"
+		// 			justify="flex-end"
+		// 			overflowY="auto"
+		// 		>
+		// 			{messages.map((message: messageType, index: number) => {
+		// 				return (
+		// 					<Text key={index} my="10px" fontSize="xl">
+		// 						{message.from}:
+		// 						<Text fontSize="lg"> {message.message}</Text>
+		// 					</Text>
+		// 				);
+		// 			})}
+		// 		</Flex>
+		// 		<Flex my="20px">
+		// 			<form
+		// 				onSubmit={(e) => {
+		// 					if (!message) {
+		// 						return;
+		// 					}
+		// 					e.preventDefault();
+		// 					socket.emit("message", message, room);
+		// 					displayMessage(message, "You");
+		// 					setMessage("");
+		// 				}}
+		// 			>
+		// 				<FormControl id="first-name" isRequired>
+		// 					<Input
+		// 						color="text.900"
+		// 						borderColor="#072d75"
+		// 						w="100%"
+		// 						placeholder="Message"
+		// 						value={message}
+		// 						onChange={(event: any) => {
+		// 							const temp = event.target.value;
+		// 							setMessage(temp);
+		// 						}}
+		// 					/>
+		// 				</FormControl>
+		// 			</form>
+		// 		</Flex>
+		// 	</Box>
+		// </Flex>
 	);
 }
