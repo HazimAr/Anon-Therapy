@@ -20,9 +20,9 @@ export default function Index(): JSX.Element {
 						—Free Anonymous Online Therapy—
 					</Text>
 					<Flex justify="space-between" mt="15px" mx="50px">
-						<Link>HOME</Link>
-						<Link>FAQ</Link>
-						<Link>CONTACT US</Link>
+						<Link>Home</Link>
+						<Link>Contact Us</Link>
+						<Link>Request Session</Link>
 					</Flex>
 				</Box>
 			</Flex>
