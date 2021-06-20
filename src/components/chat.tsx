@@ -81,10 +81,9 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 						<FormControl id="first-name" isRequired>
 							<Input
 								color="text.900"
-								borderColor="black"
+								borderColor="#072d75"
 								w="100%"
 								placeholder="Message"
-								px="50px"
 								value={message}
 								onChange={(event: any) => {
 									const temp = event.target.value;
