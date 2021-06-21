@@ -13,9 +13,11 @@ const socket = io(DB_URL);
 
 export default function Play(): JSX.Element {
 	const [room, setRoom] = useState("");
-	const [started, setStarted] = useState();
+	const [started, setStarted] = useState(false);
 	const [role, setRole] = useState(false);
-	const [full, setFull] = useState();
+	const [full, setFull] = useState(false);
+	const [roleP, setRoleP] = useState(false)
+	const [notify, setNotify] = useState(false);
 
 	useEffect(() => {
 		socket.on("start", () => {
@@ -38,6 +40,10 @@ export default function Play(): JSX.Element {
 		});
 
 		const room = getParameterByName("room");
+		const roleP = getParameterByName("role")
+		if (roleP) {
+			setRoleP(roleP)
+		}
 
 		if (room) {
 			setRoom(room);
@@ -45,10 +51,9 @@ export default function Play(): JSX.Element {
 				"join-room",
 				room,
 				(isStarted: boolean, serverRole: boolean, isFull: boolean) => {
-					// @ts-ignore
+					
 					setFull(isFull);
-					setRole(serverRole);
-					// @ts-ignore
+					setRole(serverRole);	
 					setStarted(isStarted);
 				}
 			);
@@ -58,18 +63,47 @@ export default function Play(): JSX.Element {
 	}, []);
 
 	useEffect(() => {
-		if (started === false && room && full === false) {
+		if (started === false && room && full === false && roleP === false) {
 			void axios.post(
 				"https://discord.com/api/webhooks/856105965500891136/MjqIwfQThqPz6u8c6dCU_DtklVgN4Vf6xytoKKItQvhgCSXJvQm3LTXDSWuPcqcFrGc_",
 				{
 					content: `<@&855764473767395368>\nSomeone has requested a therapy session\n${
 						IS_PRODUCTION
-							? `https://anontherapy.vercel.app/session?room=${room}`
-							: `http://localhost:3000/session?room=${room}`
+							? `https://anontherapy.vercel.app/session?room=${room}&role=true`
+							: `http://localhost:3000/session?room=${room}&role=true`
 					}`,
 				}
 			);
+			return;
 		}
+		if (notify === false && started === true && room && full === false ) {
+			setNotify(true);
+			void axios.post(
+					"https://discord.com/api/webhooks/856105965500891136/MjqIwfQThqPz6u8c6dCU_DtklVgN4Vf6xytoKKItQvhgCSXJvQm3LTXDSWuPcqcFrGc_",
+					{
+						content: `A therapist has joined room ${room}\n${
+							IS_PRODUCTION
+								? `https://anontherapy.vercel.app/session?room=${room}`
+								: `http://localhost:3000/session?room=${room}`
+						}`,
+					}
+				);
+			return;
+		}
+		// if (started === false && room && full === false) {
+		// 	void axios.post(
+		// 			"https://discord.com/api/webhooks/856105965500891136/MjqIwfQThqPz6u8c6dCU_DtklVgN4Vf6xytoKKItQvhgCSXJvQm3LTXDSWuPcqcFrGc_",
+		// 			{
+		// 				content: `A therapist has joined room ${room}\n${
+		// 					IS_PRODUCTION
+		// 						? `https://anontherapy.vercel.app/session?room=${room}`
+		// 						: `http://localhost:3000/session?room=${room}`
+		// 				}`,
+		// 			}
+		// 		);
+		// 	return;
+		// }
+
 	}, [started, room, full]);
 
 	return (
