@@ -42,7 +42,7 @@ export default function Play(): JSX.Element {
 		const room = getParameterByName("room");
 		const roleP = getParameterByName("role")
 		if (roleP) {
-			setRoleP(roleP)
+			setRoleP(true)
 		}
 
 		if (room) {
