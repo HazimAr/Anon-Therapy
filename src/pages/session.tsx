@@ -44,6 +44,9 @@ export default function Play(): JSX.Element {
 		if (roleP) {
 			setRoleP(true)
 		}
+		else {
+			setRoleP(false)
+		}
 
 		if (room) {
 			setRoom(room);
