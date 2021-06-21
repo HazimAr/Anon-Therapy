@@ -28,7 +28,7 @@ export default function Index(): JSX.Element {
 						color="black"
 					>
 						<Link href="/">HOME</Link>
-						<Link href="https://discord.gg/pe8xVbyg6e">
+						<Link href="https://discord.gg/pDtb5tXHKy">
 							CONTACT US
 						</Link>
 						<Link href={`/session?room=${uuid()}`}>
