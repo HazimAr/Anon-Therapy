@@ -5,8 +5,8 @@
 /* eslint-disable @typescript-eslint/explicit-module-boundary-types */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable import/no-default-export */
-import { Input, Flex, Box, Text, FormControl, Image } from "@chakra-ui/react";
-import { useState, useEffect } from "react";
+import { Box, Flex, FormControl, Image, Input, Text } from "@chakra-ui/react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 
 const StyledForm = styled.form`
