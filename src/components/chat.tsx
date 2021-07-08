@@ -93,9 +93,7 @@ export default function Home({ socket, role, room }: any): JSX.Element {
 							return (
 								<Text key={index} my="10px" fontSize="xl">
 									{message.from}:
-									<Text fontSize="lg">
-										{message.message}
-									</Text>
+									<Text fontSize="lg">{message.message}</Text>
 								</Text>
 							);
 						})}
